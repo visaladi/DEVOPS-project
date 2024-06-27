@@ -9,5 +9,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Fix Issues') {
+            steps {
+                script {
+                    sh 'npm audit fix'
+                }
+            }
+        }
     }
 }
