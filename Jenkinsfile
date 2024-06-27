@@ -5,7 +5,7 @@ pipeline {
         stage('Move to frontend directory') {
             steps {
                 script {
-                    sh 'cd ./blogfinity/frontend'
+                    sh 'cd .DEVOPS-project/blogfinity/frontend'
                 }
             }
         }
