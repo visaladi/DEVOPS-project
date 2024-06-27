@@ -2,7 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Packages') {
+        stage('Move to frontend directory') {
+            steps {
+                script {
+                    sh 'cd ./blogfinity/frontend'
+                }
+            }
+        }
+
+        stage('Install Packages for frontend') {
             steps {
                 script {
                     sh 'npm install'
@@ -10,7 +18,7 @@ pipeline {
             }
         }
 
-        stage('Fix Issues') {
+        stage('Fix Issues in frontend') {
             steps {
                 script {
                     sh 'npm audit fix'
